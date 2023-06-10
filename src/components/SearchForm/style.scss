@@ -1,0 +1,31 @@
+.searchForm {
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+
+    &__label {
+        flex-grow: 1;
+    }
+
+   &__input {
+        width: 100%;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 10px 0 0 10px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    }
+
+    &__btn {
+
+        padding: 0rem 1rem;
+        background-color: #E91E63;
+        color: #ececec;
+        border: none;
+        border-radius: 0 10px 10px 0;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+
+        &:hover {
+            background-color: #FFA726;
+        }
+    }
+}

@@ -1,35 +1,38 @@
 import { useState } from "react";
 
-function SearchForm({ fetchRepos }) {
+import './style.scss';
 
-    // Hook d'état concernant le formulaire de recherche
-    const [searchedRepos, setSearchedRepos] = useState('')
+function SearchForm({ setSearchedRepos }) {
+
+    const [inputText, setInputText] = useState('');
+
 
     // Fonction pour lancer la fonction fetch avec comme parametres le searchedText
     function handleSubmit(event) {
-        if (searchedRepos) {
-            event.preventDefault();
-            fetchRepos(searchedRepos);
-            setSearchedRepos('')
+        event.preventDefault();
+        if (inputText) {
+            setSearchedRepos(inputText);
+            setInputText('');
         }
     }
 
     // Fonction pour obtenir le searchedText
     function handleInputChange(event) {
-        setSearchedRepos(event.target.value)
+        setInputText(event.target.value)
     }
 
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
+        <form className="searchForm" onSubmit={handleSubmit}>
+            <label className="searchForm__label">
                 <input
+                    className="searchForm__input"
                     type="search"
-                    value={searchedRepos}
+                    value={inputText}
                     onChange={handleInputChange}
                 />
             </label>
-            <button type="submit">
+            <button className="searchForm__btn" type="submit">
                 Rechercher
             </button>
         </form>

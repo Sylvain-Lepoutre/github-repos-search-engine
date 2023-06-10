@@ -1,0 +1,41 @@
+.card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card__img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.card__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 0.5rem;
+}
+
+.card__desc {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 1rem;
+}
+
+.card__link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #008080;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.card__link:hover {
+    background-color: #006666;
+}
