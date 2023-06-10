@@ -1,6 +1,6 @@
 import Card from "../Card";
 
-import repos from '../../data.js';
+
 
 function Results({ displayedRepos }) {
     return (

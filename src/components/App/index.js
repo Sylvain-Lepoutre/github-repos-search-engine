@@ -28,7 +28,7 @@ function App() {
 
     return (
         <main>
-            <h1>Hello world</h1>
+            <h1>Moteur de recherche Github</h1>
             <SearchForm
                 fetchRepos={fetchRepos}
             />
