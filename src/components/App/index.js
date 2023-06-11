@@ -5,6 +5,8 @@ import './style.scss'
 import Header from "../Header";
 import SearchForm from "../SearchForm";
 import Results from "../Results";
+import Footer from "../Footer";
+import LoadingMessage from "../LoadingMessage";
 
 
 
@@ -19,6 +21,7 @@ function App() {
     // Hook d'état concernant le formulaire de recherche, valeur initial 'react'
     const [searchedRepos, setSearchedRepos] = useState('react')
 
+    // Fonction d'appel à l'API
     const fetchRepos = async () => {
         setIsLoading(true)
         try {
@@ -31,7 +34,7 @@ function App() {
         setIsLoading(false)
     }
 
-    // Hook d'effet pour initialiser la page avec une recherche 'react"
+    // Hook d'effet pour initialiser la page avec une recherche qui s'initie lors du changement d'état searchedRepos
     useEffect(() => {
         fetchRepos()
     }, [searchedRepos]);
@@ -39,19 +42,18 @@ function App() {
     return (
         <>
             <Header />
-            <main role="content">
+            <main role="main">
                 <SearchForm
                     setSearchedRepos={setSearchedRepos}
                 />
-                {isLoading && <p>Chargement en cours ... veuillez patienter</p>}
+                {isLoading && <LoadingMessage /> }
                 <Results
                     displayedRepos={displayedRepos}
                     searchedRepos={searchedRepos}
                 />
             </main>
-            <footer className="footer" role="contentinfo">Application crée par Sylvain Lepoutre à l'aide de l'API github</footer>
+            <Footer />
         </>
-
     )
 }
 
