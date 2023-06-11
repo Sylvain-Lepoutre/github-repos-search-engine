@@ -1,3 +1,6 @@
+@use '../App/mixin';
+
+
 .results {
     margin: 2rem;
 
@@ -13,8 +16,19 @@
     &__container {
         margin-top: 2rem;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        // grid-template-rows: repeat(auto-fit, 300px);
+        grid-template-columns: repeat(1, 1fr);
         gap: 1.5rem;
+
+        @include mixin.small {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mixin.medium {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include mixin.big {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 }
